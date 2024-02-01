@@ -1,4 +1,6 @@
 import React from 'react';
+
+import bg from './assets/bg.svg'
 import Card from './components/Card';
 import card from './assets/card.svg'
 import card2 from './assets/card2.svg'
@@ -13,14 +15,16 @@ import iconUser from './assets/iconUser.svg'
 import logo from './assets/logo.png'
 import buttonPlay from './assets/buttonPlay.svg'
 import Menu from './components/Menu';
+
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 const App = () => {
   return (
     <div className='w-full min-h-screen flex p-3 items-center justify-center bg-[#1E1F27]'>
-      <div className="w-full bg-[url('./assets/bg.png')] max-w-7xl bg-no-repeat bg-cover h-[720px] overflow-hidden rounded-md m-auto relative">
+      <div className="w-full max-w-7xl h-[720px] overflow-hidden rounded-md m-auto relative">
 
+        <LazyLoadImage src={bg} alt="" effect="blur"/>
 
         <div className='animate-slideUpScale absolute max-md:-right-12 right-0 top-0 z-30 flex flex-col'>
             <LazyLoadImage src={side} alt="" effect="blur"/>
@@ -35,7 +39,7 @@ const App = () => {
         </div>
 
         <div className='flex h-1/2'>
-            <header className='p-4 w-full max-md:h-14 h-24 max-md:flex justify-center'>
+            <header className='p-4 w-full absolute top-0 max-md:h-14 h-24 max-md:flex justify-center'>
               <LazyLoadImage src={logo} alt="" effect="blur" className='object-contain animate-fadeIn'/>
             </header>
             <LazyLoadImage src={name} alt="" className='animate-slideUpScale absolute max-md:w-60 max-md:-left-4 left-0 object-contain top-6' />
