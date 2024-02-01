@@ -1,6 +1,6 @@
 import React from 'react'
-import iconCard from '../assets/iconCard.png'
-import translate from '../assets/translate.svg'
+import iconCard from '../assets/iconCard.webp'
+import translate from '../assets/translate.webp'
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 

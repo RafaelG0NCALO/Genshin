@@ -1,9 +1,9 @@
 import React from 'react'
-import home from '../assets/home.svg'
-import bag from '../assets/bag.svg'
-import star from '../assets/star.svg'
-import location from '../assets/location.svg'
-import borderMenu from '../assets/borderMenu.png'
+import home from '../assets/home.webp'
+import bag from '../assets/bag.webp'
+import star from '../assets/star.webp'
+import location from '../assets/location.webp'
+import borderMenu from '../assets/borderMenu.webp'
 
 const Menu = () => {
     return (
