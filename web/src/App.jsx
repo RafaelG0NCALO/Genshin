@@ -1,7 +1,6 @@
 import React from 'react';
 
 import bg from './assets/bg.svg'
-import Card from './components/Card';
 import card from './assets/card.svg'
 import card2 from './assets/card2.svg'
 import card3 from './assets/card3.svg'
@@ -14,7 +13,9 @@ import perso from './assets/perso.svg'
 import iconUser from './assets/iconUser.svg'
 import logo from './assets/logo.png'
 import buttonPlay from './assets/buttonPlay.svg'
-import Menu from './components/Menu';
+
+const Menu = React.lazy(() => import('./components/Menu'));
+const Card = React.lazy(() => import('./components/Card'));
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -48,16 +49,20 @@ const App = () => {
 
         <div className='absolute bottom-10 z-30 w-full max-w-7xl m-auto flex justify-between max-md:pl-1 pl-7'>
           <div className='animate-slideLeft'>
-            <Menu/>
+          <React.Suspense fallback={<div>Loading...</div>}>
+      <Menu />
+    </React.Suspense>
           </div>
           <div className='flex  w-full flex-col justify-evenly items-start overflow-hidden'>
             <img src={buttonPlay} alt="" className='h-14 cursor-pointer' />
             <div className='w-full animate-fadeIn p-4 overflow-x-auto Noscroll relative'>
                 <div className='w-full h-full flex justify-start gap-4'>
-                <Card card={card} translateContent />
-                <Card card={card2} />
-                <Card card={card3} />
-                <Card card={card} />
+                <React.Suspense fallback={<div>Loading...</div>}>
+          <Card card={card} translateContent />
+          <Card card={card2} />
+          <Card card={card3} />
+          <Card card={card} />
+        </React.Suspense>
                 </div>
             </div>
           </div>
